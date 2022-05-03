@@ -1,4 +1,11 @@
-# Oculus Passthrough Drone
+# Oculus Passthrough Drone Tutorial Report
+
+This is a fork of the code written by Dilmer Valecillos, at the original repository [here](https://github.com/dilmerv/OculusPassthroughDrone). Full credit goes to him for writing the code, I have simply made a couple of modifications and figured out how to build and run the code myself. Build instructions can be found below:
+
+
+
+
+
 Oculus Passthrough Drone Demos by using Oculus Quest 2, Unity, Tello, and Brain Computer Interfaces.
 
 This repo aims to teach you how to build you own Drone FPV by using the following technologies:
