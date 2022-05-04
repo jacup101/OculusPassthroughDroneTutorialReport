@@ -1,5 +1,6 @@
 ﻿public enum DroneCommand
 {
+    // These enums are super useful for standardizing the way we communicate with the drone, instead of using strings or things like that
     command,
     takeoff,
     land,
