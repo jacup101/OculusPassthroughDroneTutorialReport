@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class DroneStateManager : Singleton<DroneStateManager>
 {
+
+    // The main purpose for this class is to get the information from the drone's state, and update the UI, which is set using the fields below in Unity
     [SerializeField]
     private float updateFrequency = 1.0f;
 
