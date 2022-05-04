@@ -9,6 +9,7 @@ using UnityEngine;
 
 public class DroneClient : Singleton<DroneClient>
 {
+    // Drone Client sets up the UDP connection with the drone, and provides some useful (and important) variables, such as whether or not the SDK is initialized and so on
     private static readonly object lockObject = new object();
 
     [SerializeField]
@@ -43,7 +44,7 @@ public class DroneClient : Singleton<DroneClient>
     // Use messages to queued up log entries
     // normally needed when using a secondary thread
     public Queue<string> LogMessages { get; set; } = new Queue<string>();
-
+    // All update does is continouusly log, which is a little different from how things are normally done in Unity, but other comoponents in this file are run on another thread
     void Update()
     {
         if (LogMessages.Count > 0)
@@ -80,6 +81,8 @@ public class DroneClient : Singleton<DroneClient>
 
     // This method should only be used for control type commands
     // use DroneRequest parameter to read and control commands
+    
+    // This method is used to send commands to th drone, over UDP to the specific IP endpoint that handles commands, as defined in variables above
     public void SendCommand(string command)
     {
         Enum.TryParse(command, out DroneCommand droneCommand);
@@ -103,7 +106,7 @@ public class DroneClient : Singleton<DroneClient>
         byte[] message = Encoding.ASCII.GetBytes($"{droneRequest.Payload}");
         UdpClient.Send(message, message.Length, new IPEndPoint(IPAddress.Parse(droneIP), controllerPort));
     }
-
+    // Run on its own thread, to constantly receive the state from the drone and update the stats in UI
     public void StateReceiver()
     {
         while (true)
