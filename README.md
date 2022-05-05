@@ -13,6 +13,7 @@ This is a fork of the code written by Dilmer Valecillos, at the original reposit
 8. Reopen the Unity project, with the Oculus Quest 2 (in dev mode) connected to your machine over USB-C (you may have to allow USB debugging through the Quest)
 9. Build and run the program for the Quets 2 ([instructions here](https://developer.oculus.com/documentation/unity/unity-build/))
 10. Test that the program runs correctly (or not) :( 
+11. The requirements should be included in this repository, but it might be worth looking at the others mentioned below to see how to properly install them
 
 
 
